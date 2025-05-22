@@ -19,15 +19,15 @@ def to_markdown(text):
   return Markdown(textwrap.indent(text, '> ', predicate=lambda _: True))
 
 # local run
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-runpod_key = os.getenv("runpod_key")
-runpod_id = os.getenv("runpod_id")
+# genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# runpod_key = os.getenv("runpod_key")
+# runpod_id = os.getenv("runpod_id")
 
 
 # deployment
-# genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
-# runpod_key = st.secrets['runpod_key']
-# runpod_id = st.secrets['runpod_id']
+genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
+runpod_key = st.secrets['runpod_key']
+runpod_id = st.secrets['runpod_id']
 
 
 def get_gemini_response(question):
